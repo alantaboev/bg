@@ -1,5 +1,6 @@
 {
     "name": "alantaboev/bg",
+    "bin": ["bin/brain-games"],
     "description": "My first project",
     "license": "GPL-3.0-only",
     "authors": [
@@ -8,8 +9,12 @@
             "email": "alantaboev@mail.ru"
         }
     ],
-    "bin": [
-        "bin/brain-games"
-    ],
-    "require": {}
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    },
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.11"
+    }
 }
