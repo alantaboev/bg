@@ -1,0 +1,14 @@
+{
+    "name": "alantaboev/bg",
+    "description": "My first project",
+    "authors": [
+        {
+            "name": "Alan Taboev",
+            "email": "alantaboev@mail.ru"
+        }
+    ],
+    "bin": [
+        "bin/brain-games"
+    ],
+    "require": {}
+}
