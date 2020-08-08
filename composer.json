@@ -1,7 +1,10 @@
 
 {
     "name": "alantaboev/bg",
-    "bin": ["bin/brain-games"],
+    "bin": [
+        "bin/brain-games",
+        "bin/brain-even"
+    ],
     "description": "My first project",
     "license": "GPL-3.0-only",
     "authors": [
