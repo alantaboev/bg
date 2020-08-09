@@ -23,9 +23,9 @@
         ]
     },
     "require": {
-        "wp-cli/php-cli-tools": "^0.11.11"
+        "wp-cli/php-cli-tools": "^0.11@dev"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.5.5"
+        "squizlabs/php_codesniffer": "^3.5@dev"
     }
 }
