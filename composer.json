@@ -18,7 +18,8 @@
     },
     "autoload": {
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/even.php"
         ]
     },
     "require": {

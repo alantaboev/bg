@@ -2,7 +2,8 @@
 
 <?php
 
-use function Bg\Cli\run;
+use function bg\even\getQA;
+use function bg\even\play;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -12,4 +13,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-run();
+play(getQA());
