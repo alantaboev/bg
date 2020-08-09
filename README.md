@@ -10,5 +10,5 @@ For global installation, use the command:
 ```
 composer global require alantaboev/bg
 ```
-To start the game «even/odd» use the command: ```brain-even```
+For playing «odd or even», use the command: ```brain-even```
 > asciinema brain-even
