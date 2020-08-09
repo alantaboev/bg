@@ -31,7 +31,7 @@ function play($questions)
     line('Congratulations, %s!', $name);
 }
 
-function getQA()
+function getQuestions()
 {
     $correctAnswers = [];
     for ($i = 0; $i < QUESTIONS; $i++) {
