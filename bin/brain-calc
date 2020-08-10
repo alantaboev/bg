@@ -2,7 +2,10 @@
 
 <?php
 
-use function Bg\Cli\run;
+use function bg\games\calc\getQuestions;
+use function bg\game\play;
+
+use const bg\games\calc\GAME_RULES;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -12,7 +15,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-echo 'Welcome to the Brain Games!';
-print_r("\n");
-
-run();
+play(GAME_RULES, getQuestions());

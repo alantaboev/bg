@@ -2,8 +2,8 @@
 {
     "name": "alantaboev/bg",
     "bin": [
-        "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "description": "My first project",
     "license": "GPL-3.0-only",
@@ -18,8 +18,8 @@
     },
     "autoload": {
         "files": [
-            "src/Cli.php",
-            "src/even.php"
+            "src/games/even.php",
+            "src/games/calc.php"
         ]
     },
     "require": {
