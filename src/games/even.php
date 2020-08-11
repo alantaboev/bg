@@ -16,13 +16,13 @@ function run()
 
 function getQuestions()
 {
-    $correctAnswers = [];
+    $stages = [];
     for ($i = 0; $i < GAME_STAGES; $i++) {
         $number = rand(0, 100);
         $answer = (isEven($number)) ? 'yes' : 'no';
-        $correctAnswers[$number] = $answer;
+        $stages[$number] = $answer;
     }
-    return $correctAnswers;
+    return $stages;
 }
 
 function isEven($number)
