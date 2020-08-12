@@ -10,11 +10,11 @@ const GAME_RULES = 'Find the greatest common divisor of given numbers.';
 
 function run()
 {
-    $questions = getQuestions();
+    $questions = prepareQuestions();
     play(GAME_RULES, $questions);
 }
 
-function getQuestions()
+function prepareQuestions()
 {
     $stages = [];
     for ($i = 0; $i < GAME_STAGES; $i++) {

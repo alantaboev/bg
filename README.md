@@ -16,5 +16,8 @@ For playing «Odd or even», use the command: `brain-even`
 For playing «Calculator», use the command: `brain-calc`
 > asciinema brain-calc
 
-For playing «Greatest Common Divisor of given numbers», use the command: `brain-gcd`
+For playing «Greatest Common Divisor», use the command: `brain-gcd`
 > asciinema brain-gcd
+
+For playing «Arithmetic progression», use the command: `brain-progression`
+> asciinema brain-progression
