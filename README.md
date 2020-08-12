@@ -21,3 +21,6 @@ For playing «Greatest Common Divisor», use the command: `brain-gcd`
 
 For playing «Arithmetic progression», use the command: `brain-progression`
 > asciinema brain-progression
+
+For playing «Prime number», use the command: `brain-prime`
+> asciinema brain-prime

@@ -5,7 +5,8 @@
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
-        "bin/brain-progression"
+        "bin/brain-progression",
+        "bin/brain-prime"
     ],
     "description": "My first project",
     "license": "GPL-3.0-only",
@@ -24,7 +25,8 @@
             "src/games/even.php",
             "src/games/calc.php",
             "src/games/gcd.php",
-            "src/games/progression.php"
+            "src/games/progression.php",
+            "src/games/prime.php"
         ]
     },
     "require": {
