@@ -6,7 +6,7 @@
 ## Game installation
 Use [Composer](https://getcomposer.org/) to install the game.
 
-For global installation, use the command:
+For global installation and updates, use the command:
 ```
 composer global require alantaboev/bg
 ```
