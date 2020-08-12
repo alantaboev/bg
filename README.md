@@ -15,3 +15,6 @@ For playing «Odd or even», use the command: `brain-even`
 
 For playing «Calculator», use the command: `brain-calc`
 > asciinema brain-calc
+
+For playing «Greatest Common Divisor of given numbers», use the command: `brain-gcd`
+> asciinema brain-gcd

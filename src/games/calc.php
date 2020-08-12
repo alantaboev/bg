@@ -42,8 +42,3 @@ function getQuestions()
     }
     return $stages;
 }
-
-function getAction($symbols)
-{
-    return array_rand($symbols);
-}
