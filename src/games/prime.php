@@ -18,7 +18,7 @@ function prepareQuestions()
 {
     $stages = [];
     for ($i = 0; $i < GAME_STAGES; $i++) {
-        $number = rand(1, 10);
+        $number = rand(2, 20);
         $answer = (isPrime($number)) ? 'yes' : 'no';
         $stages[$number] = $answer;
     }

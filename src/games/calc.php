@@ -23,7 +23,7 @@ function prepareQuestions()
         $number2 = rand(1, 10);
         $action = MATH_SYMBOLS[array_rand(MATH_SYMBOLS)];
         $quest = "{$number1} {$action} {$number2}";
-        // eval вроде как не рекомендуется использовать
+
 //        eval('$answer = ' . $number1 . $action . $number2 . ';');
 
         switch ($action) {

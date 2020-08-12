@@ -10,17 +10,24 @@ For global installation and updates, use the command:
 ```
 composer global require alantaboev/bg
 ```
+[![asciicast](https://asciinema.org/a/XfbfhXDVJjdmBcH0PdNkLZ96a.svg)](https://asciinema.org/a/XfbfhXDVJjdmBcH0PdNkLZ96a)
+
+## Odd or even
 For playing «Odd or even», use the command: `brain-even`
-> asciinema brain-even
+[![asciicast](https://asciinema.org/a/xwMyM5IlzPKU7MHNZQf0ovxwd.svg)](https://asciinema.org/a/xwMyM5IlzPKU7MHNZQf0ovxwd)
 
+## Calculator
 For playing «Calculator», use the command: `brain-calc`
-> asciinema brain-calc
+[![asciicast](https://asciinema.org/a/5xUuGMFoQLiF3wZDuRRb1FL1t.svg)](https://asciinema.org/a/5xUuGMFoQLiF3wZDuRRb1FL1t)
 
+## Greatest Common Divisor
 For playing «Greatest Common Divisor», use the command: `brain-gcd`
-> asciinema brain-gcd
+[![asciicast](https://asciinema.org/a/iZ7KzgcMSRTttlBfQATsZddh5.svg)](https://asciinema.org/a/iZ7KzgcMSRTttlBfQATsZddh5)
 
+## Arithmetic progression
 For playing «Arithmetic progression», use the command: `brain-progression`
-> asciinema brain-progression
+[![asciicast](https://asciinema.org/a/4Xx6YJp6OLL7R9UTT0VCpekdX.svg)](https://asciinema.org/a/4Xx6YJp6OLL7R9UTT0VCpekdX)
 
+## Prime number
 For playing «Prime number», use the command: `brain-prime`
-> asciinema brain-prime
+[![asciicast](https://asciinema.org/a/iDE7JZsnBGb8NK03LlCEZc98Y.svg)](https://asciinema.org/a/iDE7JZsnBGb8NK03LlCEZc98Y)
