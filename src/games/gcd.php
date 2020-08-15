@@ -1,10 +1,10 @@
 <?php
 
-namespace bg\games\gcd;
+namespace Bg\Games\Gcd;
 
-use function bg\game\play;
+use function Bg\Game\play;
 
-use const bg\game\GAME_STAGES;
+use const Bg\Game\GAME_STAGES;
 
 const GAME_RULES = 'Find the greatest common divisor of given numbers.';
 
@@ -16,18 +16,23 @@ function run()
 
 function prepareQuestions()
 {
-    $stages = [];
+    $questions = [];
     for ($i = 0; $i < GAME_STAGES; $i++) {
         $number1 = rand(1, 100);
         $number2 = rand(1, 100);
-        $answer = gcd($number1, $number2);
-        $quest = "{$number1} {$number2}";
-        $stages[$quest] = (string)$answer;
+        $answer = calcGcd($number1, $number2);
+        $question = "{$number1} {$number2}";
+
+        if (empty($questions[$question])) {
+            $questions[$question] = (string)$answer;
+        } else {
+            $i--;
+        }
     }
-    return $stages;
+    return $questions;
 }
 
-function gcd($n1, $n2)
+function calcGcd($n1, $n2)
 {
     while (true) {
         if ($n1 == $n2) {

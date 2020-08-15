@@ -1,10 +1,10 @@
 <?php
 
-namespace bg\games\even;
+namespace Bg\Games\Even;
 
-use function bg\game\play;
+use function Bg\Game\play;
 
-use const bg\game\GAME_STAGES;
+use const Bg\Game\GAME_STAGES;
 
 const GAME_RULES = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -16,13 +16,18 @@ function run()
 
 function prepareQuestions()
 {
-    $stages = [];
+    $questions = [];
     for ($i = 0; $i < GAME_STAGES; $i++) {
-        $number = rand(0, 100);
-        $answer = (isEven($number)) ? 'yes' : 'no';
-        $stages[$number] = $answer;
+        $question = rand(0, 100);
+        $answer = isEven($question) ? 'yes' : 'no';
+
+        if (empty($questions[$question])) {
+            $questions[$question] = $answer;
+        } else {
+            $i--;
+        }
     }
-    return $stages;
+    return $questions;
 }
 
 function isEven($number)

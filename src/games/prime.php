@@ -1,10 +1,10 @@
 <?php
 
-namespace bg\games\prime;
+namespace Bg\Games\Prime;
 
-use function bg\game\play;
+use function Bg\Game\play;
 
-use const bg\game\GAME_STAGES;
+use const Bg\Game\GAME_STAGES;
 
 const GAME_RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -16,17 +16,28 @@ function run()
 
 function prepareQuestions()
 {
-    $stages = [];
+    $questions = [];
     for ($i = 0; $i < GAME_STAGES; $i++) {
-        $number = rand(2, 20);
-        $answer = (isPrime($number)) ? 'yes' : 'no';
-        $stages[$number] = $answer;
+        $question = rand(-20, 20);
+        $answer = isPrime($question) ? 'yes' : 'no';
+
+        if (empty($questions[$question])) {
+            $questions[$question] = $answer;
+        } else {
+            $i--;
+        }
     }
-    return $stages;
+    return $questions;
 }
 
 function isPrime($n)
 {
+    $n = abs($n);
+
+    if (in_array($n, [0, 1])) {
+        return false;
+    }
+
     for ($x = 2; $x <= sqrt($n); $x++) {
         if ($n % $x === 0) {
             return false;

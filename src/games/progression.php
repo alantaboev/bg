@@ -1,13 +1,13 @@
 <?php
 
-namespace bg\games\progression;
+namespace Bg\Games\Progression;
 
-use function bg\game\play;
+use function Bg\Game\play;
 
-use const bg\game\GAME_STAGES;
+use const Bg\Game\GAME_STAGES;
 
 const GAME_RULES = 'What number is missing in the progression?';
-const LONG_PROGRESSION = 10;
+const PROGRESSION_LENGTH = 10;
 
 function run()
 {
@@ -17,26 +17,29 @@ function run()
 
 function prepareQuestions()
 {
-    $stages = [];
+    $questions = [];
     for ($i = 0; $i < GAME_STAGES; $i++) {
-        $progression = createProgression();
+        $progression = createProgression(rand(0, 20), rand(1, 10));
+
         $skip = array_rand($progression);
         $answer = $progression[$skip];
-
         $progression[$skip] = '..';
 
-        $quest = implode(' ', $progression);
-        $stages[$quest] = (string)$answer;
+        $question = implode(' ', $progression);
+
+        if (empty($questions[$question])) {
+            $questions[$question] = (string)$answer;
+        } else {
+            $i--;
+        }
     }
-    return $stages;
+    return $questions;
 }
 
-function createProgression()
+function createProgression($first, $step)
 {
-    $first = rand(0, 20);
-    $step = rand(1, 10);
     $result[] = $first;
-    for ($i = 0, $current = $first; $i < LONG_PROGRESSION; $i++) {
+    for ($i = 0, $current = $first; $i < PROGRESSION_LENGTH; $i++) {
         $current += $step;
         $result[] = $current;
     }
