@@ -17,17 +17,16 @@ function run()
 function prepareQuestions()
 {
     $questions = [];
-    for ($i = 0; $i < GAME_STAGES; $i++) {
+    $i = 0;
+    while ($i < GAME_STAGES) {
         $number1 = rand(1, 100);
         $number2 = rand(1, 100);
         $answer = calcGcd($number1, $number2);
         $question = "{$number1} {$number2}";
-
         if (empty($questions[$question])) {
             $questions[$question] = (string)$answer;
-        } else {
-            $i--;
         }
+        $i = count($questions);
     }
     return $questions;
 }

@@ -17,24 +17,21 @@ function run()
 function prepareQuestions()
 {
     $questions = [];
-    for ($i = 0; $i < GAME_STAGES; $i++) {
-        $question = rand(-20, 20);
+    $i = 0;
+    while ($i < GAME_STAGES) {
+        $question = rand(-10, 20);
         $answer = isPrime($question) ? 'yes' : 'no';
-
         if (empty($questions[$question])) {
             $questions[$question] = $answer;
-        } else {
-            $i--;
         }
+        $i = count($questions);
     }
     return $questions;
 }
 
 function isPrime($n)
 {
-    $n = abs($n);
-
-    if (in_array($n, [0, 1])) {
+    if ($n < 2) {
         return false;
     }
 

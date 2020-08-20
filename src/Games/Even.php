@@ -17,15 +17,14 @@ function run()
 function prepareQuestions()
 {
     $questions = [];
-    for ($i = 0; $i < GAME_STAGES; $i++) {
+    $i = 0;
+    while ($i < GAME_STAGES) {
         $question = rand(0, 100);
         $answer = isEven($question) ? 'yes' : 'no';
-
         if (empty($questions[$question])) {
             $questions[$question] = $answer;
-        } else {
-            $i--;
         }
+        $i = count($questions);
     }
     return $questions;
 }

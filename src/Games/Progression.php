@@ -18,28 +18,27 @@ function run()
 function prepareQuestions()
 {
     $questions = [];
-    for ($i = 0; $i < GAME_STAGES; $i++) {
-        $progression = createProgression(rand(0, 20), rand(1, 10));
+    $i = 0;
+    while ($i < GAME_STAGES) {
+        $progression = createProgression(rand(0, 20), rand(1, 10), PROGRESSION_LENGTH);
 
         $skip = array_rand($progression);
         $answer = $progression[$skip];
         $progression[$skip] = '..';
 
         $question = implode(' ', $progression);
-
         if (empty($questions[$question])) {
             $questions[$question] = (string)$answer;
-        } else {
-            $i--;
         }
+        $i = count($questions);
     }
     return $questions;
 }
 
-function createProgression($first, $step)
+function createProgression($first, $step, $progressionLength)
 {
     $result[] = $first;
-    for ($i = 0, $current = $first; $i < PROGRESSION_LENGTH; $i++) {
+    for ($i = 0, $current = $first; $i < $progressionLength; $i++) {
         $current += $step;
         $result[] = $current;
     }

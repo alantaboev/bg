@@ -22,8 +22,8 @@ function play($gameRules, $questions)
         $userAnswer = prompt('Your answer');
 
         if ($userAnswer !== $correctAnswer) {
-            line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $userAnswer, $correctAnswer);
-            line('Let\'s try again, %s!', $name);
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $correctAnswer);
+            line("Let's try again, %s!", $name);
             exit();
         }
 
