@@ -18,8 +18,7 @@ function run()
 function prepareQuestions()
 {
     $questions = [];
-    $i = 0;
-    while ($i < GAME_STAGES) {
+    while (count($questions) < GAME_STAGES) {
         $progression = createProgression(rand(0, 20), rand(1, 10), PROGRESSION_LENGTH);
 
         $skip = array_rand($progression);
@@ -27,10 +26,7 @@ function prepareQuestions()
         $progression[$skip] = '..';
 
         $question = implode(' ', $progression);
-        if (empty($questions[$question])) {
-            $questions[$question] = (string)$answer;
-        }
-        $i = count($questions);
+        $questions[$question] = (string)$answer;
     }
     return $questions;
 }

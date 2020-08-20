@@ -17,14 +17,10 @@ function run()
 function prepareQuestions()
 {
     $questions = [];
-    $i = 0;
-    while ($i < GAME_STAGES) {
+    while (count($questions) < GAME_STAGES) {
         $question = rand(-10, 20);
         $answer = isPrime($question) ? 'yes' : 'no';
-        if (empty($questions[$question])) {
-            $questions[$question] = $answer;
-        }
-        $i = count($questions);
+        $questions[$question] = $answer;
     }
     return $questions;
 }

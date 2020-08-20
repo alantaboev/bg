@@ -18,21 +18,13 @@ function run()
 function prepareQuestions()
 {
     $questions = [];
-    $i = 0;
-    while ($i < GAME_STAGES) {
+    while (count($questions) < GAME_STAGES) {
         $number1 = rand(1, 10);
         $number2 = rand(1, 10);
         $action = MATH_SYMBOLS[array_rand(MATH_SYMBOLS)];
         $question = "{$number1} {$action} {$number2}";
-        try {
-            $answer = calculate($number1, $number2, $action);
-            if (empty($questions[$question])) {
-                $questions[$question] = (string)$answer;
-            }
-            $i = count($questions);
-        } catch (\Exception $e) {
-            echo 'Error: ', $e->getMessage(), "\n";
-        }
+        $answer = calculate($number1, $number2, $action);
+        $questions[$question] = (string)$answer;
     }
     return $questions;
 }
@@ -57,7 +49,7 @@ function calculate($num1, $num2, $action)
             $result = $num1 * $num2;
             break;
         default:
-            throw new \Exception('Unknown arithmetic action');
+            throw new \Exception("Unknown arithmetic action '{$action}'");
     }
     return $result;
 }
