@@ -6,27 +6,27 @@ use function Bg\Game\play;
 
 use const Bg\Game\GAME_STAGES;
 
-const GAME_RULES = 'What is the result of the expression?';
-const MATH_SYMBOLS = ['+', '-', '*'];
+const DESCRIPTION = 'What is the result of the expression?';
+const MATH_SYMBOL = ['+', '-', '*'];
 
 function run()
 {
-    $questions = prepareQuestions();
-    play(GAME_RULES, $questions);
+    $tasks = createTasks();
+    play(DESCRIPTION, $tasks);
 }
 
-function prepareQuestions()
+function createTasks()
 {
-    $questions = [];
-    while (count($questions) < GAME_STAGES) {
+    $tasks = [];
+    while (count($tasks) < GAME_STAGES) {
         $number1 = rand(1, 10);
         $number2 = rand(1, 10);
-        $action = MATH_SYMBOLS[array_rand(MATH_SYMBOLS)];
+        $action = MATH_SYMBOL[array_rand(MATH_SYMBOL)];
         $question = "{$number1} {$action} {$number2}";
         $answer = calculate($number1, $number2, $action);
-        $questions[$question] = (string)$answer;
+        $tasks[$question] = (string)$answer;
     }
-    return $questions;
+    return $tasks;
 }
 
 /**
@@ -40,16 +40,12 @@ function calculate($num1, $num2, $action)
 {
     switch ($action) {
         case '+':
-            $result = $num1 + $num2;
-            break;
+            return $num1 + $num2;
         case '-':
-            $result = $num1 - $num2;
-            break;
+            return $num1 - $num2;
         case '*':
-            $result = $num1 * $num2;
-            break;
+            return $num1 * $num2;
         default:
             throw new \Exception("Unknown arithmetic action '{$action}'");
     }
-    return $result;
 }

@@ -7,10 +7,10 @@ use function cli\prompt;
 
 const GAME_STAGES = 3;
 
-function play($gameRules, $questions)
+function play($description, $questions)
 {
     line('Welcome to the Brain Games!');
-    line($gameRules);
+    line($description);
     line(''); // empty line separator
 
     $name = prompt('May I have your name?');

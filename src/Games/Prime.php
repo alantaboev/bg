@@ -6,23 +6,23 @@ use function Bg\Game\play;
 
 use const Bg\Game\GAME_STAGES;
 
-const GAME_RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function run()
 {
-    $questions = prepareQuestions();
-    play(GAME_RULES, $questions);
+    $tasks = createTasks();
+    play(DESCRIPTION, $tasks);
 }
 
-function prepareQuestions()
+function createTasks()
 {
-    $questions = [];
-    while (count($questions) < GAME_STAGES) {
+    $tasks = [];
+    while (count($tasks) < GAME_STAGES) {
         $question = rand(-10, 20);
         $answer = isPrime($question) ? 'yes' : 'no';
-        $questions[$question] = $answer;
+        $tasks[$question] = $answer;
     }
-    return $questions;
+    return $tasks;
 }
 
 function isPrime($n)

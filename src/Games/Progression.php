@@ -6,19 +6,19 @@ use function Bg\Game\play;
 
 use const Bg\Game\GAME_STAGES;
 
-const GAME_RULES = 'What number is missing in the progression?';
+const DESCRIPTION = 'What number is missing in the progression?';
 const PROGRESSION_LENGTH = 10;
 
 function run()
 {
-    $questions = prepareQuestions();
-    play(GAME_RULES, $questions);
+    $tasks = createTasks();
+    play(DESCRIPTION, $tasks);
 }
 
-function prepareQuestions()
+function createTasks()
 {
-    $questions = [];
-    while (count($questions) < GAME_STAGES) {
+    $tasks = [];
+    while (count($tasks) < GAME_STAGES) {
         $progression = createProgression(rand(0, 20), rand(1, 10), PROGRESSION_LENGTH);
 
         $skip = array_rand($progression);
@@ -26,9 +26,9 @@ function prepareQuestions()
         $progression[$skip] = '..';
 
         $question = implode(' ', $progression);
-        $questions[$question] = (string)$answer;
+        $tasks[$question] = (string)$answer;
     }
-    return $questions;
+    return $tasks;
 }
 
 function createProgression($first, $step, $progressionLength)
