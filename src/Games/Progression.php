@@ -21,9 +21,9 @@ function createTasks()
     while (count($tasks) < GAME_STAGES) {
         $progression = createProgression(rand(0, 20), rand(1, 10), PROGRESSION_LENGTH);
 
-        $skip = array_rand($progression);
-        $answer = $progression[$skip];
-        $progression[$skip] = '..';
+        $skippedIndex = array_rand($progression);
+        $answer = $progression[$skippedIndex];
+        $progression[$skippedIndex] = '..';
 
         $question = implode(' ', $progression);
         $tasks[$question] = (string)$answer;
